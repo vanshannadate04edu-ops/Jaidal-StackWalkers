@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Anomaly System - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <h1>Attendance Anomaly Dashboard</h1>
+            <button id="logout-btn" class="logout-btn">Logout</button>
+        </header>
+        <div class="dashboard-content">
+            <div class="card">
+                <h2>Upload Attendance Sheet</h2>
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <input type="file" id="file" name="file" accept=".csv,.xlsx" required>
+                    <button type="submit" class="upload-btn">Upload</button>
+                </form>
+            </div>
+            <div class="card">
+                <h2>Anomaly Reports</h2>
+                <table id="anomalyTable">
+                    <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Subject</th>
+                            <th>Date</th>
+                            <th>Anomaly Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html>

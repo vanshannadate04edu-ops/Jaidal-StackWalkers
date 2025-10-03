@@ -1,0 +1,120 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Login Page Styles */
+.login-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-container h1 {
+    color: #2c3e50;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background-color: #2980b9;
+}
+
+.error-message {
+    color: #e74c3c;
+}
+
+/* Dashboard Styles */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logout-btn {
+    padding: 8px 16px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.dashboard-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.upload-btn {
+    padding: 8px 16px;
+    background-color: #2ecc71;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #3498db;
+    color: #fff;
+}
