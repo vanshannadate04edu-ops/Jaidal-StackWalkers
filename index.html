@@ -1,31 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attendance Anomaly System - Admin Login</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance Anomaly System - Admin Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="login-container">
-        <h1>Attendance Anomaly System</h1>
-        <form id="loginForm">
-            <div class="form-group">
-                <label for="username">Username/ID:</label>
-                <input type="text" id="username" name="username" required 
-                       pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,15}$"
-                       title="Username must be 6-15 characters and contain both letters and numbers.">
-            </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required
-                       pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
-                       title="Password must be at least 8 characters, with one uppercase letter, one lowercase letter, and one number.">
-            </div>
-            <button type="submit" class="login-btn">Login</button>
-        </form>
-        <p id="error-message" class="error-message"></p>
-    </div>
-    <script src="login.js"></script>
+  <div class="login-container max-w-md mx-auto mt-20 p-6 bg-white rounded-2xl shadow-lg">
+    <h1 class="text-2xl font-bold text-center mb-6">Attendance Anomaly System</h1>
+    <form id="loginForm" class="space-y-5">
+      <!-- Username -->
+      <div class="form-group">
+        <label for="username" class="block font-medium">Username/ID:</label>
+        <input type="text" id="username" name="username" required
+          pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,15}$"
+          title="Username must be 6-15 characters and contain both letters and numbers."
+          class="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+
+      <!-- Password with eye icon -->
+      <div class="form-group relative">
+        <label for="password" class="block font-medium">Password:</label>
+        <input type="password" id="password" name="password" required
+          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
+          title="Password must be at least 8 characters, with one uppercase letter, one lowercase letter, and one number."
+          class="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 pr-10">
+        
+        <!-- Eye icon -->
+        <button type="button" id="togglePassword" 
+          class="absolute right-3 top-9 text-gray-600 hover:text-black">
+          👁️
+        </button>
+      </div>
+
+      <!-- Login Button -->
+      <button type="submit" 
+        class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Login</button>
+    </form>
+
+    <p id="error-message" class="error-message text-red-600 mt-3 text-center"></p>
+  </div>
+
+  <script>
+    // Password toggle logic
+    const passwordInput = document.getElementById("password");
+    const togglePassword = document.getElementById("togglePassword");
+
+    togglePassword.addEventListener("click", () => {
+      const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+      passwordInput.setAttribute("type", type);
+      togglePassword.textContent = type === "password" ? "👁️" : "🙈"; 
+    });
+  </script>
 </body>
 </html>
