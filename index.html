@@ -1,58 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Attendance Anomaly System - Admin Login</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Attendance Anomaly System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <div class="login-container max-w-md mx-auto mt-20 p-6 bg-white rounded-2xl shadow-lg">
-    <h1 class="text-2xl font-bold text-center mb-6">Attendance Anomaly System</h1>
-    <form id="loginForm" class="space-y-5">
-      <!-- Username -->
-      <div class="form-group">
-        <label for="username" class="block font-medium">Username/ID:</label>
-        <input type="text" id="username" name="username" required
-          pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,15}$"
-          title="Username must be 6-15 characters and contain both letters and numbers."
-          class="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-      </div>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
 
-      <!-- Password with eye icon -->
-      <div class="form-group relative">
-        <label for="password" class="block font-medium">Password:</label>
-        <input type="password" id="password" name="password" required
-          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
-          title="Password must be at least 8 characters, with one uppercase letter, one lowercase letter, and one number."
-          class="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 pr-10">
+    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
         
-        <!-- Eye icon -->
-        <button type="button" id="togglePassword" 
-          class="absolute right-3 top-9 text-gray-600 hover:text-black">
-          👁️
-        </button>
-      </div>
+        <div class="flex justify-center mb-6">
+            <img src="assets/ap-sha.png" alt="A.P. Shah Institute of Technology Logo" class="h-24 w-auto"> 
+        </div>
+        
+        <h1 class="text-2xl font-bold text-center text-gray-800 mb-8">
+            Attendance Anomaly System
+        </h1>
 
-      <!-- Login Button -->
-      <button type="submit" 
-        class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Login</button>
-    </form>
+        <form id="loginForm" class="space-y-6">
+            
+            <div>
+                <label for="username" class="block text-sm font-medium text-gray-700">Username/ID:</label>
+                <input 
+                    type="text" 
+                    id="username" 
+                    name="username" 
+                    required
+                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+            </div>
 
-    <p id="error-message" class="error-message text-red-600 mt-3 text-center"></p>
-  </div>
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-700">Password:</label>
+                <div class="relative mt-1">
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        required
+                        class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                    
+                    <div id="password-toggle" class="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer">
+                        <svg id="eye-icon" class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
+                            <path fill-rule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.18l.88-1.465A8.985 8.985 0 0110 4.5c2.13 0 4.08.79 5.456 2.122l.88 1.465a1.651 1.651 0 010 1.18l-.88 1.465A8.985 8.985 0 0110 15.5c-2.13 0-4.08-.79-5.456-2.122l-.88-1.465zM10 13.5a3.5 3.5 0 100-7 3.5 3.5 0 000 7z" clip-rule="evenodd" />
+                        </svg>
+                        <svg id="eye-slash-icon" class="h-5 w-5 text-gray-400 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10.75 10.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z" />
+                            <path fill-rule="evenodd" d="M2 10a8 8 0 0115.11-3.662l1.22-1.22a.75.75 0 011.06 1.06l-1.928 1.928A8.001 8.001 0 012 10zm14.187 2.02a.75.75 0 01-1.06-1.06l1.22-1.22a8.003 8.003 0 00-11.7-2.11L2.72 8.72a.75.75 0 01-1.06-1.06l1.22-1.22A8 8 0 0117.25 10c-.78 1.51-1.89 2.8-3.063 3.662z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
 
-  <script>
-    // Password toggle logic
-    const passwordInput = document.getElementById("password");
-    const togglePassword = document.getElementById("togglePassword");
+            <div>
+                <button 
+                    type="submit" 
+                    class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    Login
+                </button>
+            </div>
+        </form>
+    </div>
 
-    togglePassword.addEventListener("click", () => {
-      const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
-      passwordInput.setAttribute("type", type);
-      togglePassword.textContent = type === "password" ? "👁️" : "🙈"; 
-    });
-  </script>
+    <script>
+        // --- NEW: SCRIPT FOR PASSWORD TOGGLE ---
+        const passwordInput = document.getElementById('password');
+        const passwordToggle = document.getElementById('password-toggle');
+        const eyeIcon = document.getElementById('eye-icon');
+        const eyeSlashIcon = document.getElementById('eye-slash-icon');
+
+        passwordToggle.addEventListener('click', () => {
+            // Check the current type of the input
+            const isPassword = passwordInput.type === 'password';
+            
+            // Change the input type
+            passwordInput.type = isPassword ? 'text' : 'password';
+            
+            // Toggle which icon is visible
+            eyeIcon.classList.toggle('hidden');
+            eyeSlashIcon.classList.toggle('hidden');
+        });
+
+
+        // --- YOUR EXISTING SCRIPT (UNCHANGED) ---
+        const loginForm = document.getElementById('loginForm');
+
+        loginForm.addEventListener('submit', (event) => {
+            event.preventDefault(); 
+            console.log("Form submitted! Attempting to redirect to dashboard.html...");
+            window.location.href = 'dashboard.html'; 
+        });
+    </script>
 </body>
 </html>

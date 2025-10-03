@@ -156,3 +156,11 @@ th {
     color: #555;
     font-style: italic;
 }
+.system-logo {
+  display: block;      /* Allows the use of auto margins for centering */
+  margin-left: auto;   /* Centers the image horizontally */
+  margin-right: auto;  /* Centers the image horizontally */
+  margin-bottom: 16px; /* Adds space below the image (equivalent to mb-4) */
+  height: 100px;        /* Sets a fixed height (equivalent to h-20) */
+  width: auto;         /* Adjusts width automatically to maintain aspect ratio */
+}

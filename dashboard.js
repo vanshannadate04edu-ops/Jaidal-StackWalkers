@@ -59,7 +59,11 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             if (fileInput.files.length > 0) {
                 alert(`Uploading file: ${fileInput.files[0].name}. (Backend not implemented)`);
-                // Here you would add the code to actually send the file to a server
+                
+                // --- MODIFIED PART: Added navigation ---
+                // This line will redirect the user to a new page after the alert.
+                window.location.href = 'upload-success.html'; 
+
             } else {
                 alert('Please select a file to upload.');
             }
